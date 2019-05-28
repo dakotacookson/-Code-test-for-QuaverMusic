@@ -9,26 +9,26 @@ let Data = "We the People of the United States, in Order to form a more perfect 
 //  T and E combained should return 4
 let TestData = "The. the, the? THE! to. he?"
 
-preambleparse = {
-    preambleparser() {
+PreambleParse = {
+    PreambleParser() {
         // splits on space ((change out data for test data if you would like to test))
         let preamblespliter = Data.split(" ")
 
         // the var that contains the  exported  answer from  string without punc
-        let AnswwerStringNoPunc = []
+        let AnswerStringNoPunc = []
 
         // the var that contains the  exported answer from  array  without punc
-        let AnswerArrrayNoPunc = []
+        let AnswerArrayNoPunc = []
 
         // a for each loop that takes all the punctiation out of thre array then exports it to a new string
         // then splits it again  into an array then exports it
         preamblespliter.forEach(element2 => {
-            AnswwerStringNoPunc += element2.replace(",", "")
+            AnswerStringNoPunc += element2.replace(",", "")
                 .replace(".", "")
                 .replace("?", "")
                 .replace("!", "")
                 + " "
-            AnswerArrrayNoPunc = AnswwerStringNoPunc.split(" ")
+            AnswerArrayNoPunc = AnswerStringNoPunc.split(" ")
         });
 
         // sets a counter  for all three points
@@ -37,7 +37,7 @@ preambleparse = {
         let TAndECounter = 0
 
         // for each word grabs the char at the 0 pos and checks if its an T if it is it adds to the counter
-        AnswerArrrayNoPunc.forEach(element => {
+        AnswerArrayNoPunc.forEach(element => {
             let TfirstCount = element.charAt(0).toUpperCase()
             if (TfirstCount == "T") {
                 TCounter++
@@ -49,8 +49,8 @@ preambleparse = {
                 ECounter++
             }
 
-            // for each word grabs the char at the -1  pos or the last pos and checks if its an a E 
-            // and for each word grabs the char at the 0 pos and checks if its an T 
+            // for each word grabs the char at the -1  pos or the last pos and checks if its an a E
+            // and for each word grabs the char at the 0 pos and checks if its an T
             // if both check are a match  is it adds to the counter
             if (TfirstCount == "T" && ElastCount == "E") {
                 TAndECounter++
@@ -62,11 +62,11 @@ preambleparse = {
 
         //  fills out the data on the webpage based on the counter info
         body1.innerHTML =
-            `words beginning with T = ${TCounter}
+    `words beginning with T = ${TCounter}
     <br> words that  End with E = ${ECounter}
     <br> words beginning with T and End with E = ${TAndECounter}`
     }
 }
 
 // calls the function
-preambleparse.preambleparser()
+PreambleParse.PreambleParser()
