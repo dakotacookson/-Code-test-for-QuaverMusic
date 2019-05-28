@@ -12,7 +12,7 @@ let TestData = "The. the, the? THE! to. he?"
 preambleparse = {
     preambleparser() {
         // splits on space ((change out data for test data if you would like to test))
-        let preamblespliter = TestData.split(" ")
+        let preamblespliter = Data.split(" ")
 
         // the var that contains the  exported  answer from  string without punc
         let AnswwerStringNoPunc = []
