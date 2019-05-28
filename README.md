@@ -1,4 +1,4 @@
-# -Code-test-fdoir-QuaverMusic
+# -Code-test-for-QuaverMusic
 
 To run either use nodeJS or install on a web server altternitvley follow thye link listed bellow
 http://codechallange.atwebpages.com/
