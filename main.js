@@ -11,25 +11,11 @@ let TestData = "The. the, the? THE! to. he?"
 
 PreambleParse = {
     PreambleParser() {
+        // utilizing regexp to remove ending punc
+        let reg = Data.replace(/[,]|[.]|[?]|[!]/g, " ")
+
         // splits on space ((change out data for test data if you would like to test))
-        let preamblespliter = Data.split(" ")
-
-        // the var that contains the  exported  answer from  string without punc
-        let AnswerStringNoPunc = []
-
-        // the var that contains the  exported answer from  array  without punc
-        let AnswerArrayNoPunc = []
-
-        // a for each loop that takes all the punctiation out of thre array then exports it to a new string
-        // then splits it again  into an array then exports it
-        preamblespliter.forEach(element2 => {
-            AnswerStringNoPunc += element2.replace(",", "")
-                .replace(".", "")
-                .replace("?", "")
-                .replace("!", "")
-                + " "
-            AnswerArrayNoPunc = AnswerStringNoPunc.split(" ")
-        });
+        let preamblespliter = reg.split(" ")
 
         // sets a counter  for all three points
         let TCounter = 0
@@ -37,7 +23,7 @@ PreambleParse = {
         let TAndECounter = 0
 
         // for each word grabs the char at the 0 pos and checks if its an T if it is it adds to the counter
-        AnswerArrayNoPunc.forEach(element => {
+        preamblespliter.forEach(element => {
             let TfirstCount = element.charAt(0).toUpperCase()
             if (TfirstCount == "T") {
                 TCounter++
