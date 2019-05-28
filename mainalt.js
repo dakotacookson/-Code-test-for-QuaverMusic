@@ -3,7 +3,7 @@ let Data = "We the People of the United States, in Order to form a more perfect 
 
 
 
-//Here is an easy tyest to check funtionality this is done corectly
+//Here is an easy test to check funtionality this is done corectly
 // T should return 5 t
 //  E should return 5
 //  T and E combained should return 4
